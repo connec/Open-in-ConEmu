@@ -1,0 +1,3 @@
+[
+  { "caption": "Open in ConEmu", "command": "open_in_conemu", "args": { "dirs": [] } }
+]
