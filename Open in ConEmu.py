@@ -1,18 +1,18 @@
 import sublime, sublime_plugin
-from subprocess import call
+from subprocess import Popen
 
 class OpenInConemuCommand(sublime_plugin.WindowCommand):
   def run(self, dirs):
     args = [ '/single', '/dir', "%s" % dirs[0] ]
 
     try:
-      call(['ConEmu'] + args)
+      Popen(['ConEmu'] + args)
       return None
     except WindowsError:
       pass
 
     try:
-      call(['ConEmu64'] + args)
+      Popen(['ConEmu64'] + args)
       return None
     except WindowsError:
       pass
